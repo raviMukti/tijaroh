@@ -10,12 +10,28 @@
 
     <!-- Custom fonts for this template -->
     <link href="{{ asset('css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <!-- Styles -->
-    
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:700&display=swap');
+            .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+            }
+        }
+        /* @media (max-width: 360px) {
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+            }
+        } */
+    </style>
     <!-- Custom styles for this template -->
-    <link href="{{ asset('css/agency.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
 </head>

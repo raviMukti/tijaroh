@@ -1,41 +1,7 @@
-<!-- Footer -->
-<footer class="footer">
-<div class="container">
-    <div class="row align-items-center">
-    <div class="col-md-4">
-        <span class="copyright">Copyright &copy; Tijaroh 2019</span>
-    </div>
-    <div class="col-md-4">
-        <ul class="list-inline social-buttons">
-        <li class="list-inline-item">
-            <a href="#">
-            <i class="fab fa-twitter"></i>
-            </a>
-        </li>
-        <li class="list-inline-item">
-            <a href="#">
-            <i class="fab fa-facebook-f"></i>
-            </a>
-        </li>
-        <li class="list-inline-item">
-            <a href="#">
-            <i class="fab fa-linkedin-in"></i>
-            </a>
-        </li>
-        </ul>
-    </div>
-    <div class="col-md-4">
-        <ul class="list-inline quicklinks">
-        <li class="list-inline-item">
-            <a href="#">Privacy Policy</a>
-        </li>
-        <li class="list-inline-item">
-            <a href="#">Terms of Use</a>
-        </li>
-        </ul>
-    </div>
-    </div>
-</div>
+<!-- FOOTER -->
+<footer class="container">
+    <p class="float-right"><a href="#">Kembali ke Atas</a></p>
+    <p>&copy; 2019 - Tijaroh &middot; <a href="#">Privasi</a> &middot; <a href="#">Ketentuan</a></p>
 </footer>
 
 <!-- Bootstrap core JavaScript -->
@@ -46,7 +12,6 @@
 <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
 
 <!-- Custom scripts for this template -->
-<script src="{{ asset('js/agency.min.js') }}"></script>
-
+<script src="{{ asset('js/jquery.slim.min.js') }}"></script>
 </body>
 </html>
