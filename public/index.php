@@ -21,6 +21,8 @@
 
 require __DIR__.'/../bootstrap/autoload.php';
 
+#require __DIR__.'/../localhost/bootstrap/autoload.php';
+
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
@@ -34,6 +36,11 @@ require __DIR__.'/../bootstrap/autoload.php';
 */
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
+$app->bind('path.public', function() {
+    return __DIR__;
+});
+
+# $app = require_once __DIR__.'/../localhost:8000/bootstrap/start.php';
 
 /*
 |--------------------------------------------------------------------------

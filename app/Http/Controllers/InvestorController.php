@@ -15,7 +15,7 @@ class InvestorController extends Controller
     public function index()
     {
         //Show View Welcome
-        return view('welcome');
+        return view('beranda');
     }
 
     /**
