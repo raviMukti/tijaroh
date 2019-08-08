@@ -10,7 +10,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                    <img src="{{ asset('images/house.jpg') }}" width="100%" height="100%">
                 <div class="container">
                     <div class="carousel-caption text-left">
                     <h1>Properti</h1>
@@ -20,7 +20,7 @@
                 </div>
                 </div>
                 <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                    <img src="{{ asset('images/market.jpg') }}" width="100%" height="100%">
                 <div class="container">
                     <div class="carousel-caption">
                     <h1>Bangun bisnis</h1>
@@ -30,7 +30,7 @@
                 </div>
                 </div>
                 <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                    <img src="{{ asset('images/bank.jpg') }}" width="100%" height="100%">
                 <div class="container">
                     <div class="carousel-caption text-right">
                     <h1>Hapuskan Riba</h1>
