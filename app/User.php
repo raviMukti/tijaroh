@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role',
     ];
 
     /**
@@ -28,7 +28,7 @@ class User extends Authenticatable
     ];
 
     //Relationship One User has Zero or many proposal
-    public function proposals(){
+    public function proposal(){
         return $this->hasMany('App\Proposal');
     }
 }

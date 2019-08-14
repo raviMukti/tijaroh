@@ -8,6 +8,17 @@ use DB;
 
 class ProposalController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +27,7 @@ class ProposalController extends Controller
     public function index()
     {
         //Return view proposal, and all of its data
-        $proposal = Proposal::orderBy('created_at', 'desc')->paginate(10);
+        $proposal = Proposal::orderBy('created_at', 'desc')->paginate(5);
         return view('proposals.index')->with('proposal', $proposal);
     }
 
@@ -48,14 +59,13 @@ class ProposalController extends Controller
 
         //Membuat Nilai Default untuk status proposal ketika pertama kali dibuat
         $status = 'PROSES';
-        // $user_mitra = '1';
-
+        
         //Simpan ke database
         $proposal = new Proposal;
         $proposal->produk = $request->input('produk');
         $proposal->keterangan = $request->input('keterangan');
         $proposal->nominal = $request->input('nominal');
-
+        $proposal->user_mitra_id = auth()->user()->id;
         $proposal->status = $status;
         $proposal->save();
         
@@ -87,6 +97,11 @@ class ProposalController extends Controller
         //Return id proposal untuk di edit
         $proposal = Proposal::find($id);
 
+        //check for correct user
+        if(auth()->user()->id !== $proposal-> user_mitra_id){
+            return redirect('/proposal')->with('error', 'Akses anda tidak diizinkan');
+        }
+
         //return view edit
         return view('proposals.edit')->with('proposal', $proposal);
     }
@@ -109,6 +124,11 @@ class ProposalController extends Controller
 
         //Simpan ke database
         $proposal = Proposal::find($id);
+        //check for correct user
+        if(auth()->user()->id !== $proposal-> user_mitra_id){
+            return redirect('/proposal')->with('error', 'Akses anda tidak diizinkan');
+        }
+
         $proposal->produk = $request->input('produk');
         $proposal->keterangan = $request->input('keterangan');
         $proposal->nominal = $request->input('nominal');
@@ -128,6 +148,10 @@ class ProposalController extends Controller
     {
         //Find Proposal ID
         $proposal = Proposal::find($id);
+        //check for correct user
+        if(auth()->user()->id !== $proposal-> user_mitra_id){
+            return redirect('/proposal')->with('error', 'Akses anda tidak diizinkan');
+        }
         //Hapus dari db
         $proposal->delete();
         //redirect setelah berhasil menghapus

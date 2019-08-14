@@ -2,7 +2,11 @@
 @section('content')
     <main class="container">
         <h3>Proposal</h3>
-        <a href="/proposal/create" class="btn btn-primary mb-2">Buat Proposal</a>
+        @if (!Auth::guest())
+            @if (Auth::user()->role == 'MITRA')
+            <a href="/proposal/create" class="btn btn-primary mb-2">Buat Proposal</a>
+            @endif
+        @endif
         @if (count($proposal) > 0)
             @foreach ($proposal as $prop)
                 <div class="card card-body bg-light mb-2">
@@ -13,7 +17,7 @@
                         <div class="col-md-8 col-sm-8">
                             <h3><a href="/proposal/{{$prop->id}}">{{$prop->keterangan}}</a></h3>
                             <h5>Rp. {{number_format($prop->nominal, 2)}}</h5>
-                            <small>Dibuat {{$prop->created_at}}</small>
+                            <small>Diajukan oleh {{$prop->user->name}} pada {{$prop->created_at}}</small>
                         </div>
                     </div>
                 </div>

@@ -16,9 +16,11 @@
         <li class="nav-item">
             <a class="nav-link" href="/tentang">Tentang Kami</a>
         </li>
+        @if (!Auth::guest())
         <li class="nav-item">
             <a class="nav-link" href="/proposal">Proposal</a>
         </li>
+        @endif
     </ul>
     <ul class="nav justify-content-end nav-fill">
         <!-- Authentication Links -->

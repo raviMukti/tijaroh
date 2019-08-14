@@ -3,7 +3,7 @@
 @section('content')
 <main class="container">
     <div class="card text-center col-md-5 mx-auto">
-        <div class="card-title font-weight-bold mt-2 pt-2">Masuk</div>
+        <h1 class="card-title font-weight-bold mt-2 pt-2">Masuk</h1>
         <div class="card-body">
             <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}

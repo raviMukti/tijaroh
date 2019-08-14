@@ -3,10 +3,15 @@
 @section('content')
 <main class="container">
     <div class="card text-center col-md-5 mx-auto">
-        <div class="card-title font-weight-bold mt-2 pt-2">Register</div>
+        <h1 class="card-title font-weight-bold mt-2 pt-2">Daftar</h1>
         <div class="card-body">
             <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
+
+                <div class="form-group">
+                    {{Form::label('role', 'Tipe Akun')}}
+                    {!! Form::select('role', ['MITRA' => 'MITRA', 'INVESTOR' => 'INVESTOR'], 'MITRA',  ['class' => 'form-control', 'id' => 'role', 'name' => 'role']) !!}
+                </div>
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                     <label for="name" class="control-label">Nama</label>
