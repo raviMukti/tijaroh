@@ -1,13 +1,13 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
-<a class="navbar-brand" href="#">{{config('app.name', 'Tijaroh')}}</a>
+    <a class="navbar-brand" style="color:#fff;">{{config('app.name', 'Tijaroh')}}</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
 
 <div class="collapse navbar-collapse" id="navbarsExample03">
     <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="/">Beranda</a>
         </li>
         <li class="nav-item">

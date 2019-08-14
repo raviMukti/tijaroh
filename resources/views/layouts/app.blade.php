@@ -1,4 +1,4 @@
 @include('partial.header')
 @include('partial.nav-header')
-@yield('main')
+@yield('content')
 @include('partial.footer')

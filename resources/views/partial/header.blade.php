@@ -7,7 +7,7 @@
     <title>{{ config('app.name', 'Tijaroh') }}</title>
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" >
-
+    <link rel="shortcut icon" href="{{ asset('images/dinar.ico') }}" />
     <!-- Custom fonts for this template -->
     <link href="{{ asset('css/all.min.css') }}" rel="stylesheet" type="text/css">
     <!-- Styles -->

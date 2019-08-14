@@ -12,4 +12,6 @@
 */
 
 //Route Home
-Route::get('/', 'InvestorController@index');
+Route::get('/', 'PagesController@index');
+Route::get('/bantuan', 'PagesController@bantuan');
+Route::get('/tentang', 'PagesController@tentang');
