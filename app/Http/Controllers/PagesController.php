@@ -10,20 +10,20 @@ class PagesController extends Controller
     public function index()
     {
         //Show View Welcome
-        return view('beranda');
+        return view('pages.beranda');
     }
 
     //return view bantuan page
     public function bantuan()
     {
-        //Show View Welcome
-        return view('bantuan');
+        //Show View bantuan
+        return view('pages.bantuan');
     }
 
     //return view tentang page
     public function tentang()
     {
-        //Show View Welcome
-        return view('tentang');
+        //Show View tentang
+        return view('pages.tentang');
     }
 }

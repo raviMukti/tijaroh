@@ -14,6 +14,3 @@
 <!-- Custom scripts for this template -->
 <script src="{{ asset('js/jquery.slim.min.js') }}"></script>
 <script src="{{ asset('js/popper.min.js') }}"></script>
-
-</body>
-</html>

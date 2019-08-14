@@ -11,7 +11,10 @@
 |
 */
 
-//Route Home
+//Route Pages
 Route::get('/', 'PagesController@index');
 Route::get('/bantuan', 'PagesController@bantuan');
 Route::get('/tentang', 'PagesController@tentang');
+
+//Route Resource Proposal
+Route::resource('proposal', 'ProposalController');
