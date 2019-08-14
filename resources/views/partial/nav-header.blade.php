@@ -21,12 +21,35 @@
         </li>
     </ul>
     <ul class="nav justify-content-end nav-fill">
+        <!-- Authentication Links -->
+        @if (Auth::guest())
         <li class="nav-item mx-1">
-            <a type="button" class="btn btn-success nav-link" href="/masuk">Masuk</a>
+            <a type="button" class="btn btn-success nav-link" href="{{ route('login') }}">Masuk</a>
         </li>
         <li class="nav-item mx-1">
-            <a type="button" class="btn btn-success nav-link" href="/daftar">Daftar</a>
+            <a type="button" class="btn btn-success nav-link" href="{{ route('register') }}">Daftar</a>
         </li>
+        @else
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        @endif
     </ul>
 </div>
 </nav>

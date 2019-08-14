@@ -19,3 +19,6 @@ Route::get('/tentang', 'PagesController@tentang');
 //Route Resource Proposal
 Route::resource('proposal', 'ProposalController');
 Route::put('proposal/setujui/{proposal}', 'ProposalController@setujui');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
