@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProposalTable extends Migration
+class AddStatusAndProdukColumnInProposalTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateProposalTable extends Migration
      */
     public function up()
     {
-        Schema::create('proposal', function (Blueprint $table) {
-            $table->increments('id');
-            $table->mediumText('keterangan');
-            $table->double('nominal', 12, 2);
-            $table->timestamps();
+        Schema::table('proposal', function($table){
+            $table->string('produk');
+            $table->string('status');
         });
     }
 
@@ -28,6 +26,9 @@ class CreateProposalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proposal');
+        Schema::table('proposal', function($table){
+            $table->dropColumn('produk');
+            $table->dropColumn('status');
+        });
     }
 }

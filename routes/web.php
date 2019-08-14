@@ -18,3 +18,4 @@ Route::get('/tentang', 'PagesController@tentang');
 
 //Route Resource Proposal
 Route::resource('proposal', 'ProposalController');
+Route::put('proposal/setujui/{proposal}', 'ProposalController@setujui');

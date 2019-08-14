@@ -10,4 +10,9 @@ class Proposal extends Model
     protected $table = 'proposal';
     //Primary Key
     public $primariKey = 'id';
+
+    //Relationship One proposal has belong to one user
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

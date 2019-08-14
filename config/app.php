@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost:8000/public'),
+    'url' => env('APP_URL', 'http://localhost:'),
 
     /*
     |--------------------------------------------------------------------------
@@ -228,7 +228,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-
     ],
 
 ];

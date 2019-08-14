@@ -1,6 +1,6 @@
 body {
   min-height: 75rem;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
   font-family: "Poppins", sans-serif;
   height: 1366px;
   width: 100%;
@@ -10,6 +10,8 @@ body {
 .container {
   width: auto;
   padding: 0 15px;
+  padding-top: 50px;
+  margin-top: 20px;
 }
 
 .footer {
@@ -22,8 +24,8 @@ body {
 main {
   min-height: 100%;
   width: 100%;
-  /* margin-top: -15px; */
-  /* padding-bottom: 150px; this needs to be bigger than footer height */
+  margin-top: -15px;
+  padding-bottom: 150px; /*this needs to be bigger than footer height*/
 }
 
 /* CUSTOMIZE THE CAROUSEL

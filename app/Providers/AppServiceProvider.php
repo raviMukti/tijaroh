@@ -16,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //Avoid import to db error
         Schema::defaultStringLength(191);
+        
     }
 
     /**

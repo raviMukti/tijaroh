@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //Relationship One User has Zero or many proposal
+    public function proposals(){
+        return $this->hasMany('App\Proposal');
+    }
 }
