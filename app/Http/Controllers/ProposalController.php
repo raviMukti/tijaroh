@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Proposal;
 use DB;
+use Session;
 
 class ProposalController extends Controller
 {
@@ -68,9 +69,11 @@ class ProposalController extends Controller
         $proposal->user_mitra_id = auth()->user()->id;
         $proposal->status = $status;
         $proposal->save();
+
+        $request->session()->flash('success', 'Proposal berhasil dibuat, silakan tunggu notifikasi berikutnya!');
         
         //redirect ke halaman proposal ketika success membuat proposal
-        return redirect('/proposal')->with('success', 'Proposal berhasil dibuat, silakan tunggu notifikasi berikutnya!');
+        return redirect('/proposal');
     }
 
     /**
@@ -133,9 +136,11 @@ class ProposalController extends Controller
         $proposal->keterangan = $request->input('keterangan');
         $proposal->nominal = $request->input('nominal');
         $proposal->save();
+
+        $request->session()->flash('success', 'Proposal berhasil diubah!');
         
         //redirect ke halaman proposal ketika success membuat proposal
-        return redirect('/proposal')->with('success', 'Proposal berhasil diubah');
+        return redirect('/proposal');
     }
 
     /**
@@ -154,6 +159,8 @@ class ProposalController extends Controller
         }
         //Hapus dari db
         $proposal->delete();
+        Session::flash('success', 'Proposal berhasil dihapus!');
+
         //redirect setelah berhasil menghapus
         return redirect('/proposal')->with('success', 'Proposal telah dihapus');
 
