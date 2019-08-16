@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Proposal;
 use DB;
 use Session;
+use Notification;
+use App\Notifications\ProposalDisetujui;
 
 class ProposalController extends Controller
 {
@@ -187,4 +189,15 @@ class ProposalController extends Controller
         //redirect ke halaman proposal ketika success membuat proposal
         return redirect('/proposal');
     }
+
+    //send notification ke user
+    public function sendNotif(){
+        $user = auth()->user()->id;
+        $details = [
+            'greeting' => 'Hi Mitra',
+            'body' => 'Selamat proposal anda berhasil disetujui',
+            
+        ];
+    }
+
 }

@@ -7,18 +7,21 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class ProposalDisetujui extends Notification implements ShouldQueue
+class ProposalDisetujui extends Notification
 {
     use Queueable;
+
+    private $details;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($details)
     {
         //
+        $this->details = $details;
     }
 
     /**
@@ -29,7 +32,7 @@ class ProposalDisetujui extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['database'];
     }
 
     /**
@@ -55,7 +58,8 @@ class ProposalDisetujui extends Notification implements ShouldQueue
     public function toArray($notifiable)
     {
         return [
-            //
+            //Proposal
+            'proposal_id' => $this->details['proposal_id']
         ];
     }
 }

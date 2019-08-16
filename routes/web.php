@@ -29,3 +29,6 @@ Route::group(['middleware' => 'revalidate'], function()
     Auth::routes();
     Route::get('/home', 'HomeController@index');
 });
+
+//Notifications
+Route::get('send', 'ProposalController@sendNotif');

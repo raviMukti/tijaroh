@@ -22,7 +22,7 @@
         </li>
         @endif
     </ul>
-    <ul class="nav justify-content-end nav-fill">
+    <ul class="nav justify-content-end nav-fill mr-5">
         <!-- Authentication Links -->
         @if (Auth::guest())
         <li class="nav-item mx-1">
@@ -32,14 +32,28 @@
             <a type="button" class="btn btn-success nav-link" href="{{ route('register') }}">Daftar</a>
         </li>
         @else
-            <li class="dropdown">
+            {{-- For Bell Notification --}}
+            <li class="dropdown mx-3">
+                <a href="#" data-toggle="dropdown" role="button">
+                    <i class="fa fa-bell"></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="ml-4">Notify</a></li>
+                </ul>
+
+            </li>
+
+
+            {{-- For user --}}
+            <li class="dropdown mx-2">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
 
                 <ul class="dropdown-menu" role="menu">
                     <li>
-                        <a href="{{ route('logout') }}"
+                        <a class="ml-4" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                             Logout
