@@ -17,8 +17,15 @@ Route::get('/bantuan', 'PagesController@bantuan');
 Route::get('/tentang', 'PagesController@tentang');
 
 //Route Resource Proposal
-Route::resource('proposal', 'ProposalController');
-Route::put('proposal/setujui/{proposal}', 'ProposalController@setujui');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::put('proposal/setujui/{proposal}', 'ProposalController@setujui');
+// Auth::routes();
+
+
+Route::group(['middleware' => 'revalidate'], function()
+{
+    // Routes yang mau di revalidate masukan di sini
+    Route::resource('proposal', 'ProposalController');
+    Auth::routes();
+    Route::get('/home', 'HomeController@index');
+});

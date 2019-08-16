@@ -182,7 +182,9 @@ class ProposalController extends Controller
         $proposal->status = $statusUpdate;
         $proposal->save();
         
+        Session::flash('success', 'Proposal Telah disetujui!');
+
         //redirect ke halaman proposal ketika success membuat proposal
-        return redirect('/proposal')->with('success', 'Proposal Telah disetujui');
+        return redirect('/proposal');
     }
 }
